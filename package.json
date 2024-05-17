@@ -1,0 +1,19 @@
+{
+  "name": "backend-professional-setup",
+  "version": "1.0.0",
+  "description": "A backend Project setup ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "backend",
+    "javascript"
+  ],
+  "author": "Satya Prakash",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
