@@ -1,7 +1,7 @@
-import { ApiError } from "../utils/ApiError";
-import { asyncHandler } from "../utils/asyncHandler";
+import { ApiError } from "../utils/ApiError.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken"
-import { User } from "../models/user.model";
+import { User } from "../models/user.model.js";
 
 
 export const verifyJWT = asyncHandler(async (req, _, next) => {
@@ -18,7 +18,8 @@ export const verifyJWT = asyncHandler(async (req, _, next) => {
     .select("-password -refreshToken")
   
     if(!user){
-      // NEXT_Video : Discuss about frontend.
+     // from frontend we need to make request for new access token if 
+     //the previous one is expired by chance
       throw new ApiError(401, "Invalid Access Token")
     }
   
